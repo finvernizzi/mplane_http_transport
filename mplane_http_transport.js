@@ -12,7 +12,7 @@ var SUPERVISOR_PATH_INFO = '/info/all';
 
 var https = require("https")
     ,mplane = require("mplane"),
-    ssl_files = require("./ssl_files")
+    ssl_files = require("./ssl_files.js")
     ,request = require('request');
 
 var MIME_TYPE = "application/x-mplane+json";
