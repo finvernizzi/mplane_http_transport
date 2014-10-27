@@ -120,6 +120,7 @@ function checkSpecifications(options , action , callback){
                         if (body.length == 0) {
                             console.log("+");
                         } else {
+                            console.log(body);
                             /*
                             for (var i= 0; i<body.length; i++){
                                 var spec = mplane.from_dict(body[i]);
@@ -128,6 +129,9 @@ function checkSpecifications(options , action , callback){
                             async.eachSeries(body
                                 ,function(curSpec , callback){
                                     var spec = mplane.from_dict(curSpec);
+                                    console.log("---------");
+                                    console.log(spec);
+                                    console.log("---------");
                                     action(spec , callback);
                                 }
                                 , function(){
