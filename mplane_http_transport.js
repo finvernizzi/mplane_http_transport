@@ -127,7 +127,7 @@ function checkSpecifications(options , action , callback){
                             }*/
                             async.eachSeries(body
                                 ,function(curSpec , callback){
-                                    var spec = mplane.from_dict(body[i]);
+                                    var spec = mplane.from_dict(curSpec);
                                     action(spec , callback);
                                 }
                                 , function(){
