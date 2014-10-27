@@ -13,7 +13,8 @@ var SUPERVISOR_PATH_INFO = '/info/all';
 var https = require("https")
     ,mplane = require("mplane"),
     ssl_files = require("./ssl_files.js")
-    ,request = require('request');
+    ,request = require('request')
+    ,async = require('async');
 
 var MIME_TYPE = "application/x-mplane+json";
 
@@ -119,10 +120,18 @@ function checkSpecifications(options , action , callback){
                         if (body.length == 0) {
                             console.log("+");
                         } else {
+                            /*
                             for (var i= 0; i<body.length; i++){
                                 var spec = mplane.from_dict(body[i]);
                                 action(spec);
-                            }
+                            }*/
+                            asynch.eachSeries(body
+                                ,function(curSpec , callback){
+                                    var spec = mplane.from_dict(body[i]);
+                                    action(spec , callback);
+                                }
+                                , function(){
+                                });
                         }
                     });
                 }// else of 428
