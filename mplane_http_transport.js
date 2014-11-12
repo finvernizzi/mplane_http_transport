@@ -120,7 +120,6 @@ function checkSpecifications(options , action , callback){
                         if (body.length == 0) {
                             console.log("+");
                         } else {
-                            console.log(body);
                             async.eachSeries(body
                                 ,function(curSpec , cb){
                                     var spec = mplane.from_dict(curSpec);
