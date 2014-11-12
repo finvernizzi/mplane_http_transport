@@ -121,20 +121,17 @@ function checkSpecifications(options , action , callback){
                             console.log("+");
                         } else {
                             console.log(body);
-                            /*
-                            for (var i= 0; i<body.length; i++){
-                                var spec = mplane.from_dict(body[i]);
-                                action(spec);
-                            }*/
                             async.eachSeries(body
                                 ,function(curSpec , callback){
                                     var spec = mplane.from_dict(curSpec);
-                                    console.log("---------");
-                                    console.log(spec);
-                                    console.log("---------");
-                                    action(spec , callback);
+                                    action(spec , function(err,ret){
+						if(err){
+							console.log(err);	
+						} 	
+				    });
                                 }
                                 , function(){
+					console.log("An error occured appling action to specification");
                                 });
                         }
                     });
