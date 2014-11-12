@@ -104,13 +104,6 @@ function checkSpecifications(options , action , callback){
                 cert: ssl_files.readFileContent(options.certFile)
             };
 
-            var actionDone = function(err,ret){
-              console.log("actionDone")
-              if (err){
-                  console.log(err)
-              }
-            };
-
             var req = https.get(get_options, function (res) {
                 // For some reason we have no capability registered!
                 if (res.statusCode == 428){
@@ -129,11 +122,12 @@ function checkSpecifications(options , action , callback){
                         } else {
                             console.log(body);
                             async.eachSeries(body
-                                ,function(curSpec , actionDone){
+                                ,function(curSpec , cb){
                                     var spec = mplane.from_dict(curSpec);
-                                    action(spec , null);
+                                    action(spec , cb);
                                 }
-                                , function(){
+                                , function(err){
+                                    if (err)
 					                    console.log("An error occured appling action to specification");
                                 });
                         }
