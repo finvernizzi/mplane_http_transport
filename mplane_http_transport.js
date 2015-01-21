@@ -9,6 +9,17 @@ var SUPERVISOR_PATH_SHOW_RESULT = '/show/result';
 var SUPERVISOR_PATH_REGISTER_SPECIFICATION = '/register/specification';
 var SUPERVISOR_PATH_REGISTER_RESULT = '/register/result';
 var SUPERVISOR_PATH_INFO = '/info/all';
+// Netvisor GUI
+var GUI_LISTCAPABILITIES_PATH = "gui/list/capabilities";
+var GUI_RUNCAPABILITY_PATH = "gui/run/capability";
+var GUI_LISTPENDINGS_PATH = "gui/list/pendings";
+
+var GUI_LISTRESULTS_PATH = "gui/list/results"
+var GUI_GETRESULT_PATH = "gui/get/result"
+
+var GUI_LOGIN_PATH = "gui/login"
+var GUI_USERSETTINGS_PATH = "gui/settings"
+var GUI_STATIC_PATH = "gui/static"
 
 var https = require("https")
     ,mplane = require("mplane"),
@@ -381,3 +392,11 @@ module.exports.SUPERVISOR_PATH_REGISTER_SPECIFICATION = SUPERVISOR_PATH_REGISTER
 module.exports.SUPERVISOR_PATH_REGISTER_RESULT = SUPERVISOR_PATH_REGISTER_RESULT;
 module.exports.SUPERVISOR_PATH_INFO = SUPERVISOR_PATH_INFO;
 module.exports.MIME_TYPE = MIME_TYPE;
+module.exports.GUI_LISTCAPABILITIES_PATH = GUI_LISTCAPABILITIES_PATH;
+module.exports.GUI_RUNCAPABILITY_PATH = GUI_RUNCAPABILITY_PATH;
+module.exports.GUI_LISTPENDINGS_PATH = GUI_LISTPENDINGS_PATH;
+module.exports.GUI_LISTRESULTS_PATH = GUI_LISTPENDINGS_PATH;
+module.exports.GUI_GETRESULT_PATH = GUI_GETRESULT_PATH;
+module.exports.GUI_LOGIN_PATH = GUI_LOGIN_PATH;
+module.exports.GUI_USERSETTINGS_PATH = GUI_USERSETTINGS_PATH;
+module.exports.GUI_STATIC_PATH = GUI_STATIC_PATH;

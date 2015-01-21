@@ -1,6 +1,6 @@
 {
     "name": "mplane_http_transport",
-    "version": "0.1.8",
+    "version": "0.1.9b",
     "description": "mPlane HTTPS transport",
     "main": "mplane_http_transport.js",
     "scripts": {
