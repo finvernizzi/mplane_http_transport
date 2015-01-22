@@ -9,29 +9,16 @@ var SUPERVISOR_PATH_SHOW_RESULT = '/show/result';
 var SUPERVISOR_PATH_REGISTER_SPECIFICATION = '/register/specification';
 var SUPERVISOR_PATH_REGISTER_RESULT = '/register/result';
 var SUPERVISOR_PATH_INFO = '/info/all';
-// Netvisor GUI
-var GUI_LISTCAPABILITIES_PATH = "gui/list/capabilities";
-var GUI_RUNCAPABILITY_PATH = "gui/run/capability";
-var GUI_LISTPENDINGS_PATH = "gui/list/pendings";
 
-var GUI_LISTRESULTS_PATH = "gui/list/results"
+// Netvisor GUI APIs
+var GUI_LISTCAPABILITIES_PATH = "/gui/list/capabilities";
+var GUI_RUNCAPABILITY_PATH = "/gui/run/capability";
+var GUI_LISTPENDINGS_PATH = "/gui/list/pendings";
+var GUI_LISTRESULTS_PATH = "/gui/list/results"
 var GUI_GETRESULT_PATH = "gui/get/result"
-
-var GUI_LOGIN_PATH = "gui/login"
-var GUI_USERSETTINGS_PATH = "gui/settings"
-var GUI_STATIC_PATH = "gui/static"
-
-// Netvisor GUI
-var GUI_LISTCAPABILITIES_PATH = "gui/list/capabilities";
-var GUI_RUNCAPABILITY_PATH = "gui/run/capability";
-var GUI_LISTPENDINGS_PATH = "gui/list/pendings";
-
-var GUI_LISTRESULTS_PATH = "gui/list/results"
-var GUI_GETRESULT_PATH = "gui/get/result"
-
-var GUI_LOGIN_PATH = "gui/login"
-var GUI_USERSETTINGS_PATH = "gui/settings"
-var GUI_STATIC_PATH = "gui/static"
+var GUI_LOGIN_PATH = "/gui/login"
+var GUI_USERSETTINGS_PATH = "/gui/settings"
+var GUI_STATIC_PATH = "/gui/static"
 
 var https = require("https")
     ,mplane = require("mplane"),
