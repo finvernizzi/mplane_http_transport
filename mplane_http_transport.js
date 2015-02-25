@@ -128,7 +128,8 @@ function checkSpecifications(options , action , callback){
                         body = Buffer.concat(bodyChunks);
                         body = JSON.parse(body);
                         if (body.length == 0) {
-                            console.log("+");
+                        	if (options.debug)
+                            	console.log("+");
                         } else {
                             async.eachSeries(body
                                 ,function(curSpec , cb){
