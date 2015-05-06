@@ -45,11 +45,16 @@ var MIME_TYPE = "application/x-mplane+json";
     if ((!options.host) || (!options.port) || (!options.caFile) || (!options.keyFile) || (!options.certFile))
         callback(new Error("Invalid parameters"), null);
     else{
-        var post_data = [];
+                                // New SDK ENVELOPE 05052015
+        var post_data = {
+                                "contents":[],
+                                "envelope": "message",
+                                "version": 1
+                };
         capabilities.forEach(function(capability , index){
             // Serialize the capability Object
-            //post_data[capability.get_label()] = JSON.parse(capability.to_dict());
-            post_data.push(JSON.parse(capability.to_dict()));
+                                                //            post_data.push(JSON.parse(capability.to_dict()));
+            post_data.contents.push(JSON.parse(capability.to_dict()));          
         });
         var post_options = {
             path: SUPERVISOR_PATH_REGISTER_CAPABILITY
@@ -61,7 +66,6 @@ var MIME_TYPE = "application/x-mplane+json";
             key: ssl_files.readFileContent(options.keyFile)
             ,cert: ssl_files.readFileContent(options.certFile)
             ,headers: {
-                //'Content-Type': 'application/json; charset=utf-8',
                 'Content-Type': MIME_TYPE,
                 'Content-Length': Buffer.byteLength(JSON.stringify(post_data))
                 ,'Accept': '*/*'
