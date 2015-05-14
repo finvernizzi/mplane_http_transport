@@ -133,7 +133,7 @@ function checkSpecifications(options , action , callback){
                         body = JSON.parse(body);
                         if (body.length == 0) {
                         	if (options.debug)
-                            		console.log("+");
+                            	console.log("+");
                         } else {
 			    // SDK compliance
                             async.eachSeries(body.contents
